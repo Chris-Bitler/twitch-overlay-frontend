@@ -7,7 +7,11 @@ import {OverlayPart} from "./OverlayPart";
 
 export const Overlay = () => {
     const params = useParams();
-    const { sendJsonMessage, lastMessage, readyState } = useWebSocket("wss://void-twitch-overlay.herokuapp.com/ws");
+    const { sendJsonMessage, lastMessage, readyState } = useWebSocket("wss://void-twitch-overlay.herokuapp.com/ws", {
+        shouldReconnect: true,
+        reconnectAttempts: 10,
+        reconnectInterval: 3000
+    });
     const [recentEvents, setRecentEvents] = useState([]);
     useEffect(() => {
         if (readyState === 1) {
