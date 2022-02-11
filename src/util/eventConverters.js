@@ -1,4 +1,4 @@
-export const convertEventToUserDisplay = (event: any) => {
+export const convertEventToUserDisplay = (event) => {
     const type = event.type;
     switch (type) {
         case 'SUB':
@@ -6,7 +6,13 @@ export const convertEventToUserDisplay = (event: any) => {
         case 'RAID':
             return { username: event.raider, text: `Raid (${event.viewers} viewers)`}
         case 'GIFT_SUB':
-            const text = event.giftAmount && event.cumulativeGiftAmount ? `Gift x${event.giftAmount} (${event.cumulativeGiftAmount})` : 'Gift x1'
+            let text = 'Gift x1';
+            if (event.giftAmount) {
+                text = `Gift x${event.giftAmount}`;
+            }
+            if (event.cumulativeGiftAmount) {
+                text += ` (${event.cumulativeGiftAmount})`;
+            }
             return { username: event.gifter, text}
         case 'FOLLOW':
             return { username: event.follower, text: 'Follow' }
