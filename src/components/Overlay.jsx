@@ -12,9 +12,9 @@ export const Overlay = () => {
 
     const addToRecentEvents = (event) => {
         if (recentEvents.length >= 4) {
-            setRecentEvents([event, ...recentEvents.current.slice(0,3)]);
+            setRecentEvents([event, ...recentEventsRef.current.slice(0,3)]);
         } else {
-            setRecentEvents([event, ...recentEvents.current]);
+            setRecentEvents([event, ...recentEventsRef.current]);
         }
     };
 
