@@ -1,5 +1,5 @@
 import {useParams} from "react-router-dom";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import '../css/Overlay.css';
 import { convertEventToUserDisplay } from "../util/eventConverters";
 import {OverlayPart} from "./OverlayPart";
@@ -9,13 +9,13 @@ export const Overlay = () => {
     const params = useParams();
     const [recentEvents, setRecentEvents] = useState([]);
 
-    const addToRecentEvents = (event) => {
+    const addToRecentEvents = useCallback((event) => {
         if (recentEvents.length >= 4) {
             setRecentEvents([event, ...recentEvents.slice(0,3)]);
         } else {
             setRecentEvents([event, ...recentEvents]);
         }
-    }
+    }, [recentEvents, setRecentEvents]);
     useEffect(() => {
         const socket = io('https://void-twitch-overlay.herokuapp.com', { query: `user=${params.user}`});
         const key = new Date().getTime();
