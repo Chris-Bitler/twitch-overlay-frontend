@@ -1,0 +1,109 @@
+body {
+    background: black;
+}
+.container {
+    font-size: 14px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-family: 'Fredoka One', 'serif';
+    width: 300px;
+    height: 20px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+.username {
+    color: #FF8DA3;
+    float: left;
+}
+
+.event {
+    color: #FFC5C5;
+    float: right;
+}
+
+.transition-1 {
+    animation-duration: 300ms;
+    animation-name: first-transition;
+    -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+    -moz-animation-fill-mode: forwards;    /* FF 5+ */
+    -o-animation-fill-mode: forwards;      /* Not implemented yet */
+    -ms-animation-fill-mode: forwards;     /* IE 10+ */
+    animation-fill-mode: forwards;
+}
+
+.transition-2 {
+    animation-duration: 300ms;
+    animation-name: second-transition;
+    -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+    -moz-animation-fill-mode: forwards;    /* FF 5+ */
+    -o-animation-fill-mode: forwards;      /* Not implemented yet */
+    -ms-animation-fill-mode: forwards;     /* IE 10+ */
+    animation-fill-mode: forwards;
+}
+
+.transition-3 {
+    animation-duration: 300ms;
+    animation-name: third-transition;
+    -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+    -moz-animation-fill-mode: forwards;    /* FF 5+ */
+    -o-animation-fill-mode: forwards;      /* Not implemented yet */
+    -ms-animation-fill-mode: forwards;     /* IE 10+ */
+    animation-fill-mode: forwards;
+}
+
+.transition-4 {
+    animation-duration: 300ms;
+    animation-name: fourth-transition;
+    -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+    -moz-animation-fill-mode: forwards;    /* FF 5+ */
+    -o-animation-fill-mode: forwards;      /* Not implemented yet */
+    -ms-animation-fill-mode: forwards;     /* IE 10+ */
+    animation-fill-mode: forwards;
+}
+
+@keyframes first-transition {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes second-transition {
+    0% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 0.5;
+        transform: translateY(0);
+    }
+}
+
+@keyframes third-transition {
+    0% {
+        opacity: 0.5;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 0.5;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fourth-transition {
+    0% {
+        opacity: 0.5;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+}
