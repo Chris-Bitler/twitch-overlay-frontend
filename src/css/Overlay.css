@@ -3,6 +3,7 @@ body {
 }
 .container {
     font-size: 20px;
+    line-height: 30px;
     background: #FFFFFF;
     border-radius: 30px;
     font-family: 'Fredoka One', 'serif';
