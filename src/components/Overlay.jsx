@@ -17,7 +17,7 @@ export const Overlay = () => {
         }
     }
     useEffect(() => {
-        const socket = io('https://void-twitch-overlay.herokuapp.com/socket.io', { query: `user=${params.user}`});
+        const socket = io('https://void-twitch-overlay.herokuapp.com', { query: `user=${params.user}`});
         const key = new Date().getTime();
         socket.on('connect', () => {
             console.log('Connected to socketio server');
