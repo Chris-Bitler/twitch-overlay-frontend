@@ -2,16 +2,18 @@ body {
     background: black;
 }
 .container {
-    font-size: 16px;
+    font-size: 24px;
     background: #FFFFFF;
     border-radius: 30px;
     font-family: 'Fredoka One', 'serif';
-    width: 300px;
-    height: 20px;
+    width: 400px;
+    height: 30px;
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 5px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: auto;
 }
 
 .username {
