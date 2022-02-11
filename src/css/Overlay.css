@@ -2,11 +2,11 @@ body {
     background: black;
 }
 .container {
-    font-size: 14px;
+    font-size: 16px;
     background: #FFFFFF;
     border-radius: 30px;
     font-family: 'Fredoka One', 'serif';
-    width: 300px;
+    width: 400px;
     height: 20px;
     padding: 5px;
     padding-left: 10px;
