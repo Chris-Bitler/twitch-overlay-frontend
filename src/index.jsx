@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Home from './components/Home';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {Overlay} from "./components/Overlay";
+import {RewardOverlay} from "./components/RewardOverlay";
 
 /* @ts-ignore */
 ReactDOM.render(
@@ -11,6 +12,7 @@ ReactDOM.render(
               <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="overlay/:user" element={<Overlay />} />
+                  <Route path="overlay/rewards/:user/:rewardId" element={<RewardOverlay />} />
               </Routes>
           </Router>
   </React.StrictMode>,

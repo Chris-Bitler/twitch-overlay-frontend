@@ -1,0 +1,1 @@
+export const socketIoHost = process.env.NODE_ENV === 'development' ? 'http://localhost:25565' : 'https://void-twitch-overlay.herokuapp.com';

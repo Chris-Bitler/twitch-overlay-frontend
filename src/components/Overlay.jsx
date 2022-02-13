@@ -1,9 +1,9 @@
-import {useParams} from "react-router-dom";
-import {useCallback, useEffect, useRef, useState} from "react";
+import { useParams } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 import '../css/Overlay.css';
-import { convertEventToUserDisplay } from "../util/eventConverters";
-import {OverlayPart} from "./OverlayPart";
-import {io} from "socket.io-client";
+import { OverlayPart } from "./OverlayPart";
+import { io } from "socket.io-client";
+import { socketIoHost } from "../util/host";
 
 export const Overlay = () => {
     const params = useParams();
@@ -23,7 +23,7 @@ export const Overlay = () => {
     }, [recentEvents, setRecentEvents]);
 
     useEffect(() => {
-        const socket = io('https://void-twitch-overlay.herokuapp.com', { query: `user=${params.user}`});
+        const socket = io(socketIoHost, { query: `user=${params.user}`});
         const key = new Date().getTime();
         socket.on('connect', () => {
             console.log('Connected to socketio server');

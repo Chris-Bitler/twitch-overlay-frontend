@@ -1,0 +1,18 @@
+.links {
+    color: white;
+    text-decoration: underline;
+}
+
+.counter-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.counter {
+    font-size: 24px;
+    line-height: 30px;
+    font-family: 'Fredoka One', 'serif';
+    color: white;
+    -webkit-text-stroke: thin black;
+}
