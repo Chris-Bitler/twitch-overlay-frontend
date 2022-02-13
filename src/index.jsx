@@ -4,6 +4,7 @@ import Home from './components/Home';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {Overlay} from "./components/Overlay";
 import {RewardOverlay} from "./components/RewardOverlay";
+import {HamsterOverlay} from "./components/Hamster";
 
 /* @ts-ignore */
 ReactDOM.render(
@@ -13,6 +14,7 @@ ReactDOM.render(
                   <Route path="/" element={<Home />} />
                   <Route path="overlay/:user" element={<Overlay />} />
                   <Route path="overlay/rewards/:user/:rewardId" element={<RewardOverlay />} />
+                  <Route path="hamster" element={<HamsterOverlay />} />
               </Routes>
           </Router>
   </React.StrictMode>,

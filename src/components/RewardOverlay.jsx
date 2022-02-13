@@ -11,8 +11,6 @@ export const RewardOverlay = () => {
     const [count, setCount] = useState(5);
 
     useEffect(() => {
-        console.log(user);
-        console.log(rewardId);
         const socket = io(socketIoHost, { query: `user=${user}&rewardId=${rewardId}`});
         socket.on('connect', () => {
             console.log('Connected to socketio server');

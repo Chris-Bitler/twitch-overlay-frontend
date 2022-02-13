@@ -1,0 +1,21 @@
+.hamster-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    animation: fadeinout 4s linear 1 forwards;
+}
+
+.hamster-text {
+    font-size: 24px;
+    line-height: 30px;
+    font-family: 'Fredoka One', 'serif';
+    color: white;
+    -webkit-text-stroke: medium black;
+}
+
+@keyframes fadeinout {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
