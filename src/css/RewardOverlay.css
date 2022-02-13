@@ -3,10 +3,20 @@
     text-decoration: underline;
 }
 
+body {
+    background-color: gray !important;
+}
+
 .counter-container {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.smug-image {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
 }
 
 .counter {
@@ -14,5 +24,5 @@
     line-height: 30px;
     font-family: 'Fredoka One', 'serif';
     color: white;
-    -webkit-text-stroke: thin black;
+    -webkit-text-stroke: medium black;
 }

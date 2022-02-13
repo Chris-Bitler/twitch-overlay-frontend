@@ -1,1 +1,1 @@
-export const socketIoHost = process.env.NODE_ENV === 'development' ? 'http://localhost:25565' : 'https://void-twitch-overlay.herokuapp.com';
+export const socketIoHost = process.env.NODE_ENV === 'development' ? 'https://void-twitch-overlay.voidwhisperer.info' : 'https://void-twitch-overlay.herokuapp.com';

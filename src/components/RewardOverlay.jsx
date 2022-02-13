@@ -28,7 +28,7 @@ export const RewardOverlay = () => {
 
     return <div className="counter-container">
         <div>
-            <img src="../../../Smug.png" />
+            <img src="../../../Smug.png" className="smug-image" />
         </div>
         <div className="counter">
             {count} Kneecaps
