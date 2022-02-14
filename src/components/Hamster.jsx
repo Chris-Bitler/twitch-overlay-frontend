@@ -40,7 +40,7 @@ export const HamsterOverlay = () => {
     return currentHamster != null ? (
         <div className="hamster-container" key={currentHamster.id}>
             <div>
-                <img src="./hamster.png" />
+                <img className="hamster-image" src="./hamster.png" />
             </div>
             <div className="hamster-text">
                 {currentHamster.redeemer} has squished the hamster!

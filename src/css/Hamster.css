@@ -6,9 +6,14 @@
     animation: fadeinout 4s linear 1 forwards;
 }
 
+.hamster-image {
+    width: 192px;
+    height: auto;
+}
+
 .hamster-text {
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 40px;
+    line-height: 40px;
     font-family: 'Fredoka One', 'serif';
     color: white;
     -webkit-text-stroke: medium black;
