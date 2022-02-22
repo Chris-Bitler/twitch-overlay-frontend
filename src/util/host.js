@@ -1,1 +1,1 @@
-export const socketIoHost = process.env.NODE_ENV === 'development' ? 'https://void-twitch-overlay-dev.voidwhisperer.info' : 'https://void-twitch-overlay.voidwhisperer.info';
+export const socketIoHost = process.env.NODE_ENV === 'development' ? 'https://twitch-overlay-dev.voidwhisperer.info' : 'https://twitch-overlay.voidwhisperer.info';
