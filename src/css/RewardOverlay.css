@@ -3,10 +3,6 @@
     text-decoration: underline;
 }
 
-body {
-    background-color: gray;
-}
-
 .counter-container {
     display: flex;
     flex-direction: row;
