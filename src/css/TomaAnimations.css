@@ -1,0 +1,17 @@
+.toma-animations {
+    display: flex;
+    flex-direction: row;
+}
+
+.text-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    font-size: 16px;
+}
+
+.subtext {
+    font-size: 12px;
+}
