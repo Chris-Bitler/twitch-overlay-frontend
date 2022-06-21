@@ -184,14 +184,14 @@ export const Toma = () => {
                 `${data.gifter} has gifted ${data.giftAmount} subs!`
             )
         });
-        socket.on('tmi_subbed', data => {
+        socket.on('sub', data => {
             const key = new Date().getTime();
             addEvent(
                 EVENT_TYPES.GIFT,
                 gift,
                 8000,
                 key,
-                `${data.username} just subbed!`,
+                `${data.subber} just subbed!`,
                 data.message
             )
         });
