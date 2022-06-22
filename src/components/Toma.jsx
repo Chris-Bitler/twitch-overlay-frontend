@@ -254,7 +254,6 @@ export const Toma = () => {
         }
     }, 1000);
 
-    const imageToUse = currentEvent ? currentEvent.image : idle;
     const textToShow = currentEvent ? currentEvent.text : null;
     const subTextToShow = currentEvent ? currentEvent.subText : null;
     const key = currentEvent ? currentEvent.key : '1';
