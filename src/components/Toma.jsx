@@ -268,7 +268,8 @@ export const Toma = () => {
 
     return <div className="toma-animations">
         <div>
-            <img src={imageToUse} width={449.5} height={283.75} key={key} />
+            {currentEvent && <img src={imageToUse} width={449.5} height={283.75} key={key} />}
+            {!currentEvent && <img src={idle} width={449.5} height={283.75} key={key} />}
         </div>
         {(textToShow || subTextToShow) && (
             <div className="text-area">
