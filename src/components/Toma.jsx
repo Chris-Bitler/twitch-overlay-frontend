@@ -4,15 +4,6 @@ import {socketIoHost} from "../util/host";
 import {useParams} from "react-router-dom";
 import {useInterval} from "../util/useInterval";
 
-import drinkBits from '../img/TomaSip.gif';
-import blowKiss from '../img/TomaBlowKiss.gif';
-import sleep from '../img/TomaSleep.gif';
-import exclaim from '../img/TomaExclaim.gif';
-import lightstick from '../img/TomaLightStick.gif';
-import wave from '../img/TomaWave.gif';
-import gift from '../img/TomaGift.gif';
-import idle from '../img/TomaBase.gif';
-
 import '../css/TomaAnimations.css';
 
 const EVENT_TYPES = {
@@ -39,7 +30,7 @@ const getEventFromChatMessage = (username, isMod, isFirst, message, key) => {
     if (isFirst) {
         return {
             type: EVENT_TYPES.WAVE,
-            image: wave,
+            image: 'TomaWave.gif',
             duration: 3000,
             key,
             text: `Hi, ${username}`,
@@ -54,7 +45,7 @@ const getEventFromChatMessage = (username, isMod, isFirst, message, key) => {
     if (modNames.length > 0) {
         return {
             type: EVENT_TYPES.KISS,
-            image: blowKiss,
+            image: 'TomaBlowKiss.gif',
             duration: 3000,
             key,
         };
@@ -64,7 +55,7 @@ const getEventFromChatMessage = (username, isMod, isFirst, message, key) => {
     if (normalizedMessage.startsWith('!lurk')) {
         return {
             type: EVENT_TYPES.SLEEP,
-            image: sleep,
+            image: 'TomaSleep.gif',
             duration: 5000,
             key,
             text: `Enjoy the lurk, ${username}`
@@ -73,7 +64,7 @@ const getEventFromChatMessage = (username, isMod, isFirst, message, key) => {
     if (normalizedMessage.includes('toemaComfy') || normalizedMessage.includes('toemaComf')) {
         return {
             type: EVENT_TYPES.SLEEP,
-            image: sleep,
+            image: 'TomaSleep.gif',
             duration: 3000,
             key,
         };
@@ -86,7 +77,7 @@ const getEventFromChatMessage = (username, isMod, isFirst, message, key) => {
             const userToShoutOut = messageSplit[1];
             return {
                 type: EVENT_TYPES.EXCLAIM,
-                image: exclaim,
+                image: 'TomaExclaim.gif',
                 duration: 3000,
                 key,
                 text: 'Cutie spotted!',
@@ -98,7 +89,7 @@ const getEventFromChatMessage = (username, isMod, isFirst, message, key) => {
         .filter(cmd => normalizedMessage.startsWith(cmd)).length > 0) {
         return {
             type: EVENT_TYPES.EXCLAIM,
-            image: exclaim,
+            image: 'TomaExclaim.gif',
             duration: 3000,
             key,
         }
@@ -109,7 +100,7 @@ const getEventFromChatMessage = (username, isMod, isFirst, message, key) => {
         .filter(word => normalizedMessage.includes(word)).length > 0) {
         return {
             type: EVENT_TYPES.LIGHTSTICK,
-            image: lightstick,
+            image: 'TomaLightStick.gif',
             duration: 3000,
             key,
         }
@@ -168,7 +159,7 @@ export const Toma = () => {
             const key = new Date().getTime();
             addEvent(
                 EVENT_TYPES.EXCLAIM,
-                exclaim,
+                'TomaExclaim.gif',
                 8000,
                 key,
                 `${data.username} is hosting with ${data.viewers} viewers!`,
@@ -178,7 +169,7 @@ export const Toma = () => {
             const key = new Date().getTime();
             addEvent(
                 EVENT_TYPES.GIFT,
-                gift,
+                'TomaGift.gif',
                 8000,
                 key,
                 `${data.gifter} has gifted ${data.giftAmount} subs!`
@@ -188,7 +179,7 @@ export const Toma = () => {
             const key = new Date().getTime();
             addEvent(
                 EVENT_TYPES.GIFT,
-                gift,
+                'TomaGift.gif',
                 8000,
                 key,
                 `${data.subber} just subbed!`,
@@ -199,7 +190,7 @@ export const Toma = () => {
             const key = new Date().getTime();
             addEvent(
                 EVENT_TYPES.GIFT,
-                gift,
+                'TomaGift.gif',
                 8000,
                 key,
                 `${data.username} just resubbed!`,
@@ -210,7 +201,7 @@ export const Toma = () => {
             const key = new Date().getTime();
             addEvent(
                 EVENT_TYPES.LIGHTSTICK,
-                lightstick,
+                'TomaLightStick.gif',
                 8000,
                 key,
                 `${data.raider} is raiding with ${data.viewers}`,
@@ -220,7 +211,7 @@ export const Toma = () => {
             const key = new Date().getTime();
             addEvent(
                 EVENT_TYPES.BITS,
-                drinkBits,
+                'TomaSip.gif',
                 8000,
                 key,
                 `${data.cheerer} cheered ${data.amount} bits!`,
@@ -231,7 +222,7 @@ export const Toma = () => {
             const key = new Date().getTime();
             addEvent(
                 EVENT_TYPES.WAVE,
-                wave,
+                'TomaWave.gif',
                 3000,
                 key,
                 `${data.follower} just followed!`
@@ -239,7 +230,9 @@ export const Toma = () => {
         })
         socket.on('redeem', data => {
            const key = new Date().getTime();
-           addEvent(EVENT_TYPES.WAVE, wave, 3000, key, `Hi, ${data.redeemer}!`);
+           if (data.title.toLowerCase().includes('hi')) {
+               addEvent(EVENT_TYPES.WAVE, 'TomaWave.gif', 3000, key, `Hi, ${data.redeemer}!`);
+           }
         });
     }, []);
 
@@ -268,8 +261,8 @@ export const Toma = () => {
 
     return <div className="toma-animations">
         <div>
-            {currentEvent && <img src={imageToUse} width={449.5} height={283.75} key={key} />}
-            {!currentEvent && <img src={idle} width={449.5} height={283.75} key={key} />}
+            {currentEvent && <img src={`${process.env.PUBLIC_URL}/${currentEvent.image}?key=${key}`} width={449.5} height={283.75} key={key} />}
+            {!currentEvent && <img src={`${process.env.PUBLIC_URL}/TomaBase.gif?key=${key}`} width={449.5} height={283.75} key={key} />}
         </div>
         {(textToShow || subTextToShow) && (
             <div className="text-area">
