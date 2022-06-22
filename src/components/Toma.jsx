@@ -260,8 +260,8 @@ export const Toma = () => {
 
     return <div className="toma-animations">
         <div>
-            {currentEvent && <img src={`${process.env.PUBLIC_URL}/${currentEvent.image}?key=${key}`} width={449.5} height={283.75} key={key} />}
-            {!currentEvent && <img src={`${process.env.PUBLIC_URL}/TomaBase.gif?key=${key}`} width={449.5} height={283.75} key={key} />}
+            {currentEvent && <img src={`${process.env.PUBLIC_URL}/${currentEvent.image}#key=${key}`} width={449.5} height={283.75} key={key} />}
+            {!currentEvent && <img src={`${process.env.PUBLIC_URL}/TomaBase.gif#key=${key}`} width={449.5} height={283.75} key={key} />}
         </div>
         {(textToShow || subTextToShow) && (
             <div className="text-area">
