@@ -70,7 +70,7 @@ const getEventFromChatMessage = (username, isMod, isFirst, message, key) => {
             text: `Enjoy the lurk, ${username}`
         };
     }
-    if (normalizedMessage.includes('toemaComfy') || normalizedMessage.includes('toemaComf')) {
+    if (normalizedMessage.includes('toemacomfy') || normalizedMessage.includes('toemacomf')) {
         return {
             type: EVENT_TYPES.SLEEP,
             image: sleep,
@@ -105,7 +105,7 @@ const getEventFromChatMessage = (username, isMod, isFirst, message, key) => {
     }
 
     // Lightstick
-    if (['bebebe', 'toemaCheer', 'toemaRave']
+    if (['bebebe', 'toemacheer', 'toemarave']
         .filter(word => normalizedMessage.includes(word)).length > 0) {
         return {
             type: EVENT_TYPES.LIGHTSTICK,
