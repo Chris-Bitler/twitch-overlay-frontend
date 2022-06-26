@@ -1,1 +1,1 @@
-export const socketIoHost = 'https://twitch-overlay-dev.voidwhisperer.info';
+export const socketIoHost = 'https://twitch-overlay.voidwhisperer.info';
