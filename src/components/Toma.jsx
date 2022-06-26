@@ -87,7 +87,7 @@ const getEventFromChatMessage = (username, isMod, isFirst, message, key) => {
             return {
                 type: EVENT_TYPES.EXCLAIM,
                 image: exclaim,
-                duration: 3000,
+                duration: 4000,
                 key,
                 text: 'Cutie spotted!',
                 subText: `Check out ${userToShoutOut}`
@@ -110,7 +110,7 @@ const getEventFromChatMessage = (username, isMod, isFirst, message, key) => {
         return {
             type: EVENT_TYPES.LIGHTSTICK,
             image: lightstick,
-            duration: 3000,
+            duration: 4000,
             key,
         }
     }
