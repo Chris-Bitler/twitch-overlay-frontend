@@ -139,6 +139,13 @@ export const Toma = () => {
     }, [events, setEvents]);
 
     useEffect(() => {
+        [drinkBits, blowKiss, idle, wave, sleep, exclaim, lightstick, gift].forEach((image) => {
+            const img = new Image();
+            img.src = image;
+        });
+    }, []);
+
+    useEffect(() => {
         const socket = io(socketIoHost, { query: `user=${params.user}`});
 
         socket.on('disconnect', () => {
